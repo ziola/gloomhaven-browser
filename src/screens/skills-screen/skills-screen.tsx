@@ -1,16 +1,14 @@
-import { Button, FlatList } from 'react-native';
+import { FlatList, Text } from 'react-native';
 import React from 'react';
-import { characters } from '../../data/characters';
+import { Skill, skills } from '../../data/skills';
 
 export const SkillsScreen: React.FC = () => (
     <FlatList
-        data={characters}
-        renderItem={({item, index}) => (
-            <Button
-                onPress={() => alert(`You've clicked: ${item.name}`)}
-                title={item.name}
-                color={index % 2 ? 'red' : 'blue'}
-            />
-        )}
+        data={skills}
+        renderItem={({item}) => <SkillView skill={item}/>}
     />
 );
+
+const SkillView: React.FC<{ skill: Skill }> = ({skill}) => (
+    <Text>{skill.name}</Text>
+)

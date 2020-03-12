@@ -4,5 +4,5 @@ export enum Elements {
     Wind = 'Wind',
     Earth = 'Earth',
     Fire = 'Fire',
-    Frost = 'Frost',
+    Ice = 'Ice',
 }
